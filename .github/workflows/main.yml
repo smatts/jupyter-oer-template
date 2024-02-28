@@ -34,7 +34,7 @@ jobs:
       if: steps.changed-files.outputs.any_changed == 'false'
       run: |
         echo "Nothing to rebuild. Aborting..."
-        exit 0      
+        exit 1   
 
     # Install dependencies
     - name: Set up Python 3.11
