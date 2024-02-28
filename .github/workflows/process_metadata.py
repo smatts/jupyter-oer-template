@@ -29,7 +29,9 @@ def build_author(creator):
 replace_values = {
     'title': metadata['name'] if 'name' in metadata else None,
     'author': build_author(metadata['creator']) if 'creator' in metadata else None,
-    'repository': metadata['url'] if 'url' in metadata else None,
+    'repository': {
+        'url': metadata['url'] if 'url' in metadata else None,
+    },
     'logo': metadata['image'] if 'image' in metadata else None
 }
 
