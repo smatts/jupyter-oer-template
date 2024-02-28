@@ -9,9 +9,8 @@ latex:
 bibtex_bibfiles:
 - references.bib
 repository:
-  branch: master
-  path_to_book: docs
-  url: https://github.com/executablebooks/jupyter-book
+  branch: main
+  url: https://github.com/smatts/jupyter-oer-template
 html:
   use_issues_button: true
   use_repository_button: true
