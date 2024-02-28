@@ -35,10 +35,10 @@ jobs:
 
     - name: Get url
       run: |
-      if [ ! "$(yq '. | has("url")' metadata.yml)" = true ]; then
-        test -n "$CI_PROJECT_URL" && yq -i -Y ".url = \"$CI_PROJECT_URL\"" metadata.yml
-        test -n "$GITHUB_ACTIONS" && yq -i -Y ".url = \"${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}\"" metadata.yml
-      fi
+        if [ ! "$(yq '. | has("url")' metadata.yml)" = true ]; then
+          test -n "$CI_PROJECT_URL" && yq -i -Y ".url = \"$CI_PROJECT_URL\"" metadata.yml
+          test -n "$GITHUB_ACTIONS" && yq -i -Y ".url = \"${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}\"" metadata.yml
+        fi
 
     - name: Get metadata from metadata.yml
       run: |
