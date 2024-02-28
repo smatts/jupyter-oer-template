@@ -18,6 +18,11 @@ with open(metadata_filename, 'r') as metadata_file:
 with open(config_filename, 'r') as config_file:
     config = yaml.safe_load(config_file.read())
 
+# Get branch
+branch = None
+if os.path.exists('branch.txt'):
+    with open('branch.txt', 'r') as f:
+        branch = f.read().strip()
 
 def build_author(creator):
     # This only takes the first creator, as Jupyter Books only have one author.
@@ -30,7 +35,8 @@ replace_values = {
     'title': metadata['name'] if 'name' in metadata else None,
     'author': build_author(metadata['creator']) if 'creator' in metadata else None,
     'repository': {
-        'url': metadata['url'] if 'url' in metadata else None,
+        'url': metadata['url'] if 'url' in metadata else config['repository']['url'],
+        'branch': branch or config['repository']['branch'],
     },
     'logo': metadata['image'] if 'image' in metadata else None
 }
