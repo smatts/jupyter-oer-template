@@ -42,7 +42,7 @@ jobs:
 
     - name: Get metadata from metadata.yml
       run: |
-        python process_metadata.py
+        python .github/workflows/process_metadata.py
 
     # (optional) Cache your executed notebooks between runs
     # if you have config:
