@@ -105,4 +105,8 @@ jobs:
         git add metadata.yml
         git add _config.yml
         git commit -am "Update metadata and config"
-        git push
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
