@@ -1,0 +1,37 @@
+creativeWorkStatus: Published
+name: OER GitHub Tutorial
+description: >-
+  This tutorial shows how to easily publish OER on GitHub using a template.
+
+  By following just a few simple steps, you can create your own OER, publish it
+  for free on GitHub, include it in our OER search index OERSI and always have
+  up-to-date generated documents automatically created for you by the template
+  in under five minutes!
+license:
+  id: https://creativecommons.org/licenses/by/4.0/deed.de
+id: >-
+  https://github.com/smatts/jupyter-oer-template/
+creator:
+  - givenName: Sophie
+    familyName: Matter
+    type: Person
+    affiliation:
+      name: >-
+        Technische Informationsbibliothek (TIB) - Leibniz-Informationszentrum
+        Technik und Naturwissenschaften - Universitätsbibliothek
+      id: https://ror.org/04aj4c181
+      type: Organization
+keywords:
+  - OER
+  - Git
+  - GitHub
+  - Tutorial
+inLanguage:
+  - en
+image: >-
+  logo.svg
+learningResourceType:
+  - https://w3id.org/kim/hcrt/course
+educationalLevel:
+  - https://w3id.org/kim/educationalLevel/level_A
+datePublished: '2024-02-28'

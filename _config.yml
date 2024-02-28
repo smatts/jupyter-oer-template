@@ -1,0 +1,17 @@
+title: OER GitHub Tutorial
+author: Sophie Matter
+logo: logo.svg
+execute:
+  execute_notebooks: force
+latex:
+  latex_documents:
+    targetname: book.tex
+bibtex_bibfiles:
+- references.bib
+repository:
+  branch: master
+  path_to_book: docs
+  url: https://github.com/executablebooks/jupyter-book
+html:
+  use_issues_button: true
+  use_repository_button: true
