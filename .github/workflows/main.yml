@@ -40,7 +40,7 @@ jobs:
       shell: bash
       run: |
         echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-        echo "branch: ${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> branch.txt
+        echo "${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> branch.txt
       id: extract_branch
 
     # Install dependencies
