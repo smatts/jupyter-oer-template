@@ -56,8 +56,8 @@ jobs:
 
     - name: Remove old build files
       run: |
-      rm -rf _build/html
-      rm -rf _build/.doctrees
+        rm -rf _build/html
+        rm -rf _build/.doctrees
 
     # Build the book
     - name: Build the book
