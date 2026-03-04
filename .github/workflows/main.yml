@@ -6,6 +6,7 @@ on:
     branches:
     - master
     - main
+    - update-github-actions-workflow
     # If your git repository has the Jupyter Book within some-subfolder next to
     # unrelated files, you can make this run only if a file within that specific
     # folder has been modified.
@@ -22,10 +23,10 @@ jobs:
       contents: write
       id-token: write
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6.0.2
 
     - name: Changed Files
-      uses: tj-actions/changed-files@v42.0.5
+      uses: tj-actions/changed-files@v47.0.5
       with:
           files: |
              **.md
@@ -45,10 +46,10 @@ jobs:
       id: extract_branch
 
     # Install dependencies
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v4
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v6
       with:
-        python-version: 3.11
+        python-version: '3.13'
 
     - name: Install dependencies
       run: |
@@ -72,7 +73,7 @@ jobs:
     # execute:
     #   execute_notebooks: cache
     - name: cache executed notebooks
-      uses: actions/cache@v3
+      uses: actions/cache@v5.0.3
       with:
         path: _build/.jupyter_cache
         key: jupyter-book-cache-${{ hashFiles('requirements.txt') }}
@@ -89,14 +90,14 @@ jobs:
 
     # Upload the book's HTML as an artifact
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v2
+      uses: actions/upload-pages-artifact@v4.0.0
       with:
         path: "_build/html"
 
     # Deploy the book's HTML to GitHub Pages
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v2
+      uses: actions/deploy-pages@v4.0.5
 
     # Update metadata.yml and _config.yml
     - name: Commit changes to metadata and config
