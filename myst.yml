@@ -1,0 +1,20 @@
+version: 1
+project:
+  title: OER GitHub Tutorial
+  authors:
+    - name: Sophie Matter
+  github: tibhannover/jupyter-oer-template
+  bibliography:
+    - references.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: 00_intro.md
+    - file: 01_chapter.md
+site:
+  options:
+    logo: logo.svg
+    folders: true
+  template: book-theme
